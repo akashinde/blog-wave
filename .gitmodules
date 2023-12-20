@@ -1,0 +1,6 @@
+[submodule "offline-first-concept"]
+	path = offline-first-concept
+	url = https://github.com/ankur-prog/offline-first-concept.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/ankur-prog/offline-first-concept.git
