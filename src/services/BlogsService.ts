@@ -1,36 +1,38 @@
-import axios from 'axios'
+import axios from "axios";
 
 class BlogsService {
-    getAllBlogs () {
-        return axios({
-            url: '/blogs',
-            method: 'GET'
-        })
-    }
+  baseURL = 'blogs'
 
-    createBlog (newBlog) {
-        return axios({
-            url: '/blogs',
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            data: JSON.stringify(newBlog)
-        })
-    }
+  getAllBlogs() {
+    return axios({
+      url: this.baseURL,
+      method: "GET",
+    });
+  }
 
-    modifyBlog (id, title, content) {
-        return axios({
-            url: `/blogs/${id}`,
-            method: 'PUT',
-            params: {title, content}
-        })
-    }
+  createBlog(newBlog) {
+    return axios({
+      url: this.baseURL,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: JSON.stringify(newBlog),
+    });
+  }
 
-    deleteBlog (id) {
-        return axios({
-            url: `/blogs/${id}`,
-            method: 'DELETE'
-        })
-    }
+  modifyBlog(id, title, content) {
+    return axios({
+      url: `${this.baseURL}/${id}`,
+      method: "PUT",
+      params: { title, content },
+    });
+  }
+
+  deleteBlog(id) {
+    return axios({
+      url: `${this.baseURL}/${id}`,
+      method: "DELETE",
+    });
+  }
 }
 
-export default new BlogsService()
+export default new BlogsService();
